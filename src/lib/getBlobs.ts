@@ -2,7 +2,7 @@ import { list, ListBlobResultBlob } from "@vercel/blob";
 import { parseFrontmatter } from "./utils";
 
 interface props {
-  prefix?: "articles";
+  prefix?: "articles" | "projects";
   pathname?: string;
   max?: number;
 }
@@ -14,7 +14,7 @@ export async function getBlobs<T>({
 }: props): Promise<T> {
   const { blobs } = await list({ prefix });
 
-  if (["articles"].includes(prefix ?? "")) {
+  if (["articles", "projects"].includes(prefix ?? "")) {
     const raws = await Promise.all(
       blobs
         .filter(

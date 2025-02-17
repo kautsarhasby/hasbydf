@@ -2,7 +2,7 @@
 import { ExternalLink, MoveRight } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -12,26 +12,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { DiGithubBadge } from "react-icons/di";
 import Link from "next/link";
+import { IProject } from "@/lib/types";
+import { Badge } from "@/components/ui/badge";
 
-type DialogBoxProps = {
-  image: string;
-  title: string;
-  description: string;
-  code: string;
-  link: string;
-  tech: { name: string }[];
-};
+interface props {
+  project: IProject;
+}
 
-const DialogBox = ({
-  image,
-  title,
-  description,
-  code,
-  link,
-  tech,
-}: DialogBoxProps) => {
+const DialogBox = ({ project }: props) => {
   const [isHover, setIsHover] = useState<boolean>();
   return (
     <Dialog>
@@ -43,14 +32,14 @@ const DialogBox = ({
         >
           <div className="relative w-[300px] h-[140px] overflow-hidden ">
             <div
-              className={`absolute z-10 text-white ${
+              className={`absolute z-10 text-black ${
                 isHover ? "flex" : "hidden"
               } gap-2 w-full h-full items-center justify-center transition-none`}
             >
               View Detail <MoveRight />
             </div>
             <Image
-              src={image}
+              src={project.metadata.image!}
               layout="fill"
               objectFit="cover"
               alt="Project"
@@ -59,51 +48,57 @@ const DialogBox = ({
               }`}
             />
           </div>
-          <div className="p-2 w-full border-t-[1px] border-slate-700">
-            <span className=" w-full text-sm px-2">{title}</span>
-            <p className="px-2 text-xs">{description}</p>
+          <div className="pl-2 py-4 w-full grid grid-rows-3 border-t-[1px] border-slate-700">
+            <span className=" w-full text-sm px-2">
+              {project.metadata.title}
+            </span>
+            <div>
+              <span className="px-2 text-xs">
+                {project.metadata.description}
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-2 px-2">
+              {project.metadata.tags.map((item, index) => {
+                return (
+                  <Badge variant={"secondary"} key={index}>
+                    #{item}
+                  </Badge>
+                );
+              })}
+            </div>
           </div>
         </div>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[700px]">
+      <DialogContent className="sm:max-w-[700px] bg-black text-white">
         <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
+          <DialogTitle>{project.metadata.title}</DialogTitle>
         </DialogHeader>
         <div className="grid justify-center gap-4 py-4">
           <Image
-            src={image}
+            src={project.metadata.image!}
             alt="Project"
             width={600}
             height={200}
             className="rounded-lg"
           />
         </div>
-        <DialogDescription className="grid">
-          {description}
-          <span className="font-bold">Tech used :</span>
-          <ul className="pl-4">
-            {tech.map((item, index) => {
-              return <li key={index}>{item.name}</li>;
-            })}
-          </ul>
-        </DialogDescription>
+        <DialogDescription>{project.metadata.description}</DialogDescription>
         <DialogFooter>
-          <Link
-            href={code}
-            className={`flex gap-2  ${buttonVariants({ variant: "default" })}`}
-            target="_blank"
-          >
-            <DiGithubBadge />
-            Source Code
-          </Link>
-          <Link
-            href={link}
-            className={`flex gap-2  ${buttonVariants({ variant: "default" })}`}
-            target="_blank"
-          >
-            <ExternalLink />
-            Visit Page
-          </Link>
+          <div className="flex gap-2">
+            {project.metadata.tags.map((item, index) => {
+              return <Badge key={index}>#{item}</Badge>;
+            })}
+          </div>
+          <Button variant={"secondary"} asChild>
+            <Link
+              href={project.metadata.url}
+              className="flex gap-2"
+              target="_blank"
+            >
+              <ExternalLink />
+              View Source
+            </Link>
+          </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

@@ -1,16 +1,18 @@
 import { Search } from "lucide-react";
 import React from "react";
 
-import { dataProject } from "@/lib/constants";
 import DialogBox from "@/components/public/projects/dialog";
+import { getBlobs } from "@/lib/getBlobs";
+import { IProject } from "@/lib/types";
 
 export const revalidate = 60;
 
-export default function Project() {
+export default async function Project() {
+  const projects = await getBlobs<IProject[]>({ prefix: "projects" });
   return (
     <main className="w-full h-screen flex flex-col items-center justify-center bg-black">
-      <section className="w-full text-center font-bold text-white text-3xl">
-        <span>Some of My Project</span>
+      <section className="w-full text-center font-medium text-white text-3xl">
+        <span>Projects</span>
       </section>
       <section className="w-1/4 my-3">
         <div className="w-full relative mb-3 ">
@@ -23,18 +25,8 @@ export default function Project() {
         </div>
       </section>
       <section className="w-auto flex flex-col md:flex-row gap-4 p-2">
-        {dataProject.map((project, index) => {
-          return (
-            <DialogBox
-              key={index}
-              title={project.title}
-              image={project.image}
-              description={project.description}
-              code={project.code}
-              link={project.link}
-              tech={project.tech}
-            />
-          );
+        {projects.map((project, index) => {
+          return <DialogBox key={index} project={project} />;
         })}
       </section>
     </main>

@@ -10,8 +10,6 @@ export interface MDfile {
 
 export interface IMetaData {
   title: string;
-  author: string;
-  readtime: string;
   description: string;
   date: string;
   tags: string;
@@ -20,10 +18,20 @@ export interface IMetaData {
 
 export interface IArticle {
   metadata: IMetaData & {
+    author: string;
+    readtime: string;
     date: Date;
     tags: string[];
   };
   content: string;
+}
+
+export interface IProject {
+  metadata: IMetaData & {
+    data: Date;
+    tags: string[];
+    url: string;
+  };
 }
 
 export interface IExperience {
