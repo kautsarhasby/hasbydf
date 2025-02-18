@@ -2,7 +2,7 @@
 import { ExternalLink, MoveRight } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -40,8 +40,9 @@ const DialogBox = ({ project }: props) => {
             </div>
             <Image
               src={project.metadata.image!}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="auto"
               alt="Project"
               className={`transition-all rounded-t-lg ${
                 isHover ? "blur-[2px]" : ""
