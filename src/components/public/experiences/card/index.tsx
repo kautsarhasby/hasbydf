@@ -8,7 +8,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { IExperience } from "@/lib/types";
-import { User, CircleFadingArrowUp } from "lucide-react";
+import { User } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -18,7 +18,7 @@ interface props {
 
 export default function CardExp({ experience }: props) {
   return (
-    <Card className="max-w-2xl shadow-md">
+    <Card className="max-w-2xle w-full shadow-md">
       <CardHeader>
         <CardTitle className="flex items-center text-base md:text-lg justify-between">
           {experience.name}{" "}

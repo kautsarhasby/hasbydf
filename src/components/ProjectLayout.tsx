@@ -16,32 +16,34 @@ export default function ProjectLayout({ items }: props) {
   };
 
   return (
-    <main className="w-full h-screen flex flex-col items-center justify-center bg-black">
-      <section className="w-full text-center font-medium text-white text-3xl">
-        <span>Projects</span>
-      </section>
-      <section className="w-1/4 my-3">
-        <div className="w-full relative mb-3 ">
-          <Search className="absolute top-2 left-2 text-slate-300" />
-          <Input
-            type="text"
-            onChange={handleInputChange}
-            className="w-full p-2 px-10 rounded-md mb-3 outline-1 outline outline-slate-300"
-            placeholder="Search Project"
-          />
-        </div>
-      </section>
-      <section className="w-auto flex flex-col md:flex-row gap-4 p-2">
-        {items
-          .filter((item) => {
-            const data = [item.metadata.title, ...item.metadata.tags]
-              .join("")
-              .toLowerCase();
+    <main className="w-full min-h-screen flex  items-center justify-center bg-black">
+      <div className="container flex flex-col items-center justify-center py-14">
+        <section className="w-full text-center font-medium text-white text-3xl">
+          <span>Projects</span>
+        </section>
+        <section className="md:w-ful w-[95%] my-3">
+          <div className="w-full relative mb-3 ">
+            <Search className="absolute top-2 left-2 text-slate-300" />
+            <Input
+              type="text"
+              onChange={handleInputChange}
+              className="w-full p-2 px-10  mb-3 text-white bg-black"
+              placeholder="Search Project"
+            />
+          </div>
+        </section>
+        <section className="w-auto justify-center flex flex-col flex-wrap md:flex-row gap-4 p-2">
+          {items
+            .filter((item) => {
+              const data = [item.metadata.title, ...item.metadata.tags]
+                .join("")
+                .toLowerCase();
 
-            return query.length ? data.includes(query.toLowerCase()) : true;
-          })
-          .map((item) => item.element)}
-      </section>
+              return query.length ? data.includes(query.toLowerCase()) : true;
+            })
+            .map((item) => item.element)}
+        </section>
+      </div>
     </main>
   );
 }

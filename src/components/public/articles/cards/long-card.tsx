@@ -53,7 +53,9 @@ export default function LongCard({ article, link }: props) {
                   ))}
               </section>
               <section className="flex items-center ">
-                <p>{generateFormattedDate(new Date(article.metadata.date))}</p>
+                <p className="text-xs md:text-lg">
+                  {generateFormattedDate(new Date(article.metadata.date))}
+                </p>
               </section>
             </div>
           </section>
