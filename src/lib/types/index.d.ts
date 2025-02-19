@@ -47,4 +47,15 @@ export interface IExperience {
   hardSkills: string[];
 }
 
-export type FormState = z.infer<typeof formSchema>;
+export type FormStateType = z.infer<typeof formSchema>;
+
+export interface IFormActionState {
+  fullname?: string;
+  email?: string;
+  message?: string;
+  errors?: {
+    fullname?: string[];
+    email?: string[];
+    message?: string[];
+  };
+}

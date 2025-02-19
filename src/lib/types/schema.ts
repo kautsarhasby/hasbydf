@@ -5,6 +5,7 @@ export const formSchema = z.object({
   email: z
     .string()
     .email({ message: "Please input the correct email" })
-    .max(50),
+    .max(50)
+    .min(10),
   message: z.string().min(10),
 });
