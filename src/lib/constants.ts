@@ -1,4 +1,4 @@
-import { Book, Folder, Home, Mail } from "lucide-react";
+import { Book, Folder, Home } from "lucide-react";
 import { TemplateString } from "next/dist/lib/metadata/types/metadata-types";
 import { OpenGraph } from "next/dist/lib/metadata/types/opengraph-types";
 import { SiGithub, SiInstagram, SiLinkedin, SiSpotify } from "react-icons/si";
@@ -113,11 +113,6 @@ export const NavbarLink = [
     icon: Book,
     title: "Articles",
     url: "/articles",
-  },
-  {
-    icon: Mail,
-    title: "Contact",
-    url: "/contact",
   },
 ];
 
