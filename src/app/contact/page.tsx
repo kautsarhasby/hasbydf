@@ -1,7 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import FormContact from "@/components/public/contact/form";
 import { MailPlus } from "lucide-react";
 import React from "react";
 
@@ -20,40 +17,7 @@ export default function ContactPage() {
             <MailPlus color="white" size={120} />
           </section>
           <section className="p-2">
-            <form action="" className="text-white">
-              <div className="mb-3">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  className="bg-black"
-                  placeholder="ex: yourmail@mail.com"
-                />
-              </div>
-              <div className="mb-3">
-                <Label htmlFor="name">Name</Label>
-                <Input
-                  id="name"
-                  type="text"
-                  className="bg-black"
-                  placeholder="ex: John Doe"
-                />
-              </div>
-              <div className="mb-3">
-                <Label htmlFor="message">Message</Label>
-                <Textarea
-                  id="message"
-                  className="bg-black resize-none"
-                  rows={10}
-                  placeholder="ex: Hello i like...."
-                />
-              </div>
-              <div className="w-full">
-                <Button type="submit" className="w-full" variant={"secondary"}>
-                  Submit
-                </Button>
-              </div>
-            </form>
+            <FormContact />
           </section>
         </div>
       </div>

@@ -1,3 +1,6 @@
+import { z } from "zod";
+import { formSchema } from "./schema";
+
 export interface MDfile {
   id: number;
   uuid: string;
@@ -43,3 +46,5 @@ export interface IExperience {
   softSkills: string[];
   hardSkills: string[];
 }
+
+export type FormState = z.infer<typeof formSchema>;
