@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Oswald } from "next/font/google";
+import { Inter, Oswald, JetBrains_Mono } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
@@ -9,6 +9,11 @@ const oswald = Oswald({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-oswald",
+});
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-jbmono",
 });
 
 export const metadata: Metadata = {
@@ -22,8 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={` ${inter.className} ${oswald.variable}  antialiased`}>
+    <html lang="en" className="dark">
+      <body
+        className={` ${inter.className} ${oswald.variable} ${jetbrains.variable} antialiased`}
+      >
         <NextTopLoader />
         {children}
       </body>

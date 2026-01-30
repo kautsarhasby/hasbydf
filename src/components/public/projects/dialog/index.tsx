@@ -30,7 +30,7 @@ const DialogBox = ({ project }: props) => {
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
         >
-          <div className="relative w-[300px] h-[140px] overflow-hidden ">
+          <div className="relative w-[300px] h-[140px] ">
             <div
               className={`absolute z-10 text-black ${
                 isHover ? "flex" : "hidden"

@@ -3,7 +3,7 @@ import Navbar from "@/components/public/navbar";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
-    <main>
+    <main className="bg-[#06070A]">
       <Navbar />
       {children}
       <Footer />
