@@ -1,24 +1,84 @@
-export const experiences = [
+export type BaseExperience = {
+  company: string;
+  logo: string;
+  startDate: string;
+  endDate: string;
+};
+
+export type Role = {
+  title: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  technologies: string[];
+  softSkills: string[];
+};
+
+export type MultiRoleExperience = BaseExperience & {
+  type: "multi";
+  roles: Role[];
+};
+
+export type SingleRoleExperience = BaseExperience & {
+  type: "single";
+  title: string;
+  description: string;
+  technologies: string[];
+  softSkills: string[];
+};
+
+export type Experience = MultiRoleExperience | SingleRoleExperience;
+
+export const experiences: Experience[] = [
   {
-    title: "Course Manager",
+    type: "multi",
     company: "Lembaga Pengembangan Komputerisasi Gunadarma",
     logo: "/images/experiences/lepkom.png",
-    startDate: "Oct 2025",
+
+    // AKUMULASI
+    startDate: "Aug 2024",
     endDate: "Present",
-    description:
-      "Acted as the primary person in charge for course operations, overseeing class schedules, coordinating instructors, managing learning materials, and ensuring the smooth execution of training programs in alignment with institutional standards.",
-    technologies: ["Spreadsheet"],
-    soft_skills: ["Leadership", "Time Management", "Charge"],
+
+    roles: [
+      {
+        title: "Course Manager",
+        startDate: "Oct 2025",
+        endDate: "Present",
+        description:
+          "Oversaw course operations, schedules, instructors,learning materials and ensuring smooth execution of hands-on activities and class operations.",
+        technologies: ["Spreadsheet", "Excel"],
+        softSkills: ["Leadership", "Time Management", "Responsibility"],
+      },
+      {
+        title: "Course Instructor",
+        startDate: "Apr 2025",
+        endDate: "Present",
+        description:
+          "Delivered hands-on instruction and mentoring for computer and software-related courses.",
+        technologies: ["SQL Server", "Oracle Database"],
+        softSkills: ["Public Speaking", "Tutoring"],
+      },
+
+      {
+        title: "Course Assistant",
+        startDate: "Aug 2024",
+        endDate: "Present",
+        description:
+          "Supported instructors during practical sessions by assisting students in resolving errors in exercises and guiding problem-solving approaches",
+        technologies: ["GO", "C#", "Java", "SQL Server", "Oracle Database"],
+        softSkills: ["Teamwork", "Adaptability", "Problem Solving"],
+      },
+    ],
   },
+
   {
-    title: "Fullstack Developer Intern",
-    company: "Winnicode Digital",
+    type: "single",
+    company: "PT. Winnicode Garuda Indonesia",
     logo: "/images/experiences/winnicode.png",
     startDate: "Mar 2025",
     endDate: "Jul 2025",
-    description:
-      "Developed a full-stack employee recruitment web application, implementing authentication, role-based access, job posting management, and applicant workflows to deliver a scalable and user-friendly system.",
-
+    title: "Fullstack Developer Intern",
+    description: "Developed a full-stack employee recruitment web application.",
     technologies: [
       "Typescript",
       "Next.js",
@@ -26,30 +86,24 @@ export const experiences = [
       "PostgreSQL",
       "Supabase",
     ],
-    soft_skills: ["Public Speaking", "Tutoring"],
+    softSkills: ["Time Management", "Problem Solving"],
   },
-  {
-    title: "Course Instructor",
-    company: "Lembaga Pengembangan Komputerisasi Gunadarma",
-    logo: "/images/experiences/lepkom.png",
-    startDate: "Apr 2025",
-    endDate: "Present",
-    description:
-      "Delivered hands-on instruction and mentoring for computer and software-related courses, prepared learning materials, guided students through practical exercises, and evaluated progress to ensure effective knowledge transfer and skill development.",
 
-    technologies: ["SQL Server", "Oracle Database"],
-    soft_skills: ["Public Speaking", "Tutoring"],
-  },
   {
-    title: "E-Commerce Staff",
+    type: "single",
     company: "PT. Matahari Putra Prima Tbk",
     logo: "/images/experiences/hypermart.png",
-    startDate: "July 2021",
-    endDate: "September 2022",
+    startDate: "Jul 2021",
+    endDate: "Sep 2022",
+    title: "E-Commerce Staff",
     description:
-      "Handled daily e-commerce operations including preparing products for online orders, maintaining customer data, resolving customer issues and complaints, and collaborating with cross-functional teams to ensure timely order fulfillment and customer satisfaction.",
-
+      "Handled daily e-commerce operations and customer order fulfillment.",
     technologies: ["Microsoft Office"],
-    soft_skills: ["Team Work", "Operational Exellence", "Time Management"],
+    softSkills: [
+      "Team Work",
+      "Operational Excellence",
+      "Time Management",
+      "Customer Service",
+    ],
   },
 ];

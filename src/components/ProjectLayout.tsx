@@ -18,8 +18,8 @@ export default function ProjectLayout({ items }: props) {
   return (
     <main className="w-full min-h-screen flex  items-center justify-center bg-black">
       <div className="container flex flex-col items-center justify-center py-14">
-        <section className="w-full text-center font-medium text-white text-3xl">
-          <span>Projects</span>
+        <section className="w-full text-center font-medium font-jetbrains text-white text-3xl">
+          <span>Projects (Not Updated)</span>
         </section>
         <section className="md:w-ful w-[95%] my-3">
           <div className="w-full relative mb-3 ">
