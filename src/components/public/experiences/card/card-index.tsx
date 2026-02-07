@@ -12,12 +12,12 @@ export function CardExperience({
   return (
     <>
       {/* Git commit dot */}
-      <div className="absolute left-4 md:left-[1.6rem] top-2 w-4 h-4 rounded-full bg-[#00AAFF] shadow-[0_0px_36px_rgba(0,0,0,0.25)] shadow-[#00AAFF]/50 flex items-center justify-center">
+      <div className="absolute left-[0.15rem] md:left-[1.6rem] top-2 w-4 h-4 rounded-full bg-[#00AAFF] shadow-[0_0px_36px_rgba(0,0,0,0.25)] shadow-[#00AAFF]/50 flex items-center justify-center">
         <div className="w-2 h-2 rounded-full bg-black" />
       </div>
 
       {/* Branch indicator */}
-      <div className="absolute left-10 md:left-12 top-3 w-4 h-[2px] bg-[#00AAFF]/50" />
+      <div className="absolute left-4 md:left-12 top-4 md:top-3 w-2 md:w-4 h-[2px] bg-[#00AAFF]/50" />
 
       <div className="relative mb-12 last:mb-0 p">
         <motion.div
@@ -31,7 +31,7 @@ export function CardExperience({
           className=" border-[#00AAFF]/30 border-[1px] rounded-xl hover:shadow-[0_0px_18px_rgba(0,0,0,0.25)]  hover:shadow-[#00AAFF]/50"
         >
           <div className="p-4 space-y-4">
-            <div className="flex items-start gap-4">
+            <div className="flex flex-col md:flex-row items-start gap-4">
               <Image
                 src={experience.logo}
                 alt={experience.company}

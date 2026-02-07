@@ -1,14 +1,14 @@
 import { cn } from "@/lib/utils";
-import { techStack } from "./constant";
+import { currentlyLearningTech } from "./constants";
 
-export function TechStack() {
+export function CurrentlyLearningStack() {
   return (
     <div className="  p-2 flex  flex-col container flex-wrap justify-center text-white transition-all">
       <h3 className="before:content-['//_'] text-[#00AAFF] font-mono font-bold mb-6 text-xl">
-        <span className="text-white">tech_stack</span>
+        <span className="text-white">currently_learning</span>
       </h3>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 grid-rows-2">
-        {techStack.map((item, index) => {
+      <div className="grid md:grid-cols-5 grid-cols-2  gap-4">
+        {currentlyLearningTech.map((item, index) => {
           return (
             <div
               key={index}
@@ -18,7 +18,7 @@ export function TechStack() {
                 "flex flex-col md:flex-row",
               )}
             >
-              <item.icon size={64} />
+              <item.icon className="w-8 h-8  md:w-16 md:h-16" />
               <span className="text-sm text-center md:text-base font-jetbrains font-bold">
                 {item.label}
               </span>

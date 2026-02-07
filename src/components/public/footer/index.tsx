@@ -15,7 +15,7 @@ export default function Footer() {
           </h2>
         </div>
         <div className="gap-4  flex items-center justify-center mb-4">
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             {footerSocialLinks.map(({ name, href, icon: Icon }, i) => (
               <Button key={i.toString()} asChild>
                 <Link

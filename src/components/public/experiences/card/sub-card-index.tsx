@@ -12,12 +12,12 @@ export function MultiCardExperience({
   return (
     <>
       {/* Git commit dot */}
-      <div className="absolute left-4 md:left-[1.6rem] top-2 w-4 h-4 rounded-full bg-[#00AAFF] shadow-[0_0px_36px_rgba(0,0,0,0.25)] shadow-[#00AAFF]/50 flex items-center justify-center">
+      <div className="absolute left-[0.15rem] md:left-[1.6rem] top-2 w-4 h-4 rounded-full bg-[#00AAFF] shadow-[0_0px_36px_rgba(0,0,0,0.25)] shadow-[#00AAFF]/50 flex items-center justify-center">
         <div className="w-2 h-2 rounded-full bg-black" />
       </div>
 
       {/* Branch indicator */}
-      <div className="absolute left-10 md:left-12 top-3 w-4 h-[2px] bg-[#00AAFF]/50" />
+      <div className="absolute left-4 md:left-12 top-4 md:top-3 w-2 md:w-4  h-[2px] bg-[#00AAFF]/50" />
 
       <motion.div
         initial={{ opacity: 0, x: -40 }}
@@ -30,7 +30,7 @@ export function MultiCardExperience({
         className=" border-[#00AAFF]/30 border-[1px] rounded-xl hover:shadow-[0_0px_18px_rgba(0,0,0,0.25)]  hover:shadow-[#00AAFF]/50 "
       >
         <div className="p-4 space-y-4">
-          <div className="flex items-start gap-4">
+          <div className="flex md:flex-row flex-col items-start gap-4">
             <Image
               src={experience.logo}
               alt={experience.company}
@@ -54,17 +54,17 @@ export function MultiCardExperience({
       </motion.div>
 
       {/* Git Line  */}
-      <div className="absolute left-2 md:left-28 top-[8.15rem] bottom-0 w-[2px] bg-gradient-to-b from-[#00AAFF] via-[#00AAFF]/50 to-transparent" />
+      <div className="absolute left-10  md:left-28 top-[14.35rem] md:top-[8.15rem] bottom-0 w-[2px] bg-gradient-to-b from-[#00AAFF] via-[#00AAFF]/50 to-transparent" />
       <div>
         {experience.roles.map((exp) => (
           <div className="mb-12 mt-12 relative" key={exp.title}>
             {/* Git commit dot */}
-            <div className="absolute left-4 md:left-[1.6rem] top-1 w-4 h-4 rounded-full bg-[#00AAFF] shadow-[0_0px_36px_rgba(0,0,0,0.25)] shadow-[#00AAFF]/50 flex items-center justify-center">
+            <div className="absolute left-[0.55rem] md:left-[1.6rem] top-1 w-4 h-4 rounded-full bg-[#00AAFF] shadow-[0_0px_36px_rgba(0,0,0,0.25)] shadow-[#00AAFF]/50 flex items-center justify-center">
               <div className="w-2 h-2 rounded-full bg-black" />
             </div>
 
             {/* Branch indicator */}
-            <div className="absolute left-10 md:left-12 top-3 w-4 h-[2px] bg-[#00AAFF]/50" />
+            <div className="absolute left-6 md:left-12 top-3 w-2 md:w-4 h-[2px] bg-[#00AAFF]/50" />
 
             <motion.div
               key={exp.title}
@@ -75,7 +75,7 @@ export function MultiCardExperience({
                 ease: "easeOut",
               }}
               viewport={{ once: true, amount: 0.3 }}
-              className=" border-[#00AAFF]/30 border-[1px] ml-16 p-4 rounded-xl hover:shadow-[0_0px_18px_rgba(0,0,0,0.25)]  hover:shadow-[#00AAFF]/50"
+              className=" border-[#00AAFF]/30 border-[1px] ml-8 md:ml-16 p-4 rounded-xl hover:shadow-[0_0px_18px_rgba(0,0,0,0.25)]  hover:shadow-[#00AAFF]/50"
             >
               <div className="flex  font-jetbrains flex-col gap-2 mb-1">
                 <span className="text-white text-lg ">{exp.title}</span>

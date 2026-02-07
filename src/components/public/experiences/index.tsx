@@ -24,14 +24,14 @@ export function Experience() {
 
         <div className="max-w-4xl mx-auto relative">
           {/* Git branch line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#00AAFF] via-[#00AAFF]/50 to-transparent" />
+          <div className="absolute left-2 md:left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#00AAFF] via-[#00AAFF]/50 to-transparent" />
 
           {experiences.map((exp, index) => {
             const isMultiRole = exp.type === "multi";
             return (
               <div
                 key={index}
-                className="relative mb-12 last:mb-0 pl-16 md:pl-20"
+                className="relative mb-12 last:mb-0 pl-6 md:pl-20"
               >
                 {isMultiRole ? (
                   <MultiCardExperience experience={exp} />
@@ -43,8 +43,8 @@ export function Experience() {
           })}
 
           {/* Initial commit */}
-          <div className="relative pl-16 md:pl-20 mt-8">
-            <div className="absolute left-4 md:left-6 top-2 w-4 h-4 rounded-full border-2 border-primary/50 bg-background" />
+          <div className="relative pl-8 md:pl-20 mt-8">
+            <div className="absolute left-1 md:left-6 top-2 w-4 h-4 rounded-full border-2 border-primary/50 bg-background" />
             <p className="font-mono text-sm text-muted-foreground">
               <span className="text-[#00AAFF]">*</span> Initial commit: Started
               the journey

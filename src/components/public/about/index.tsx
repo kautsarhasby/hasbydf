@@ -14,17 +14,19 @@ const highlights = [
     icon: IconCode,
     title: "cleanCode()",
     description:
-      "Writing maintainable, scalable, and efficient code is my priority.",
+      "Striving to write clean and maintainable code while continuously improving.",
   },
   {
     icon: IconRocket,
-    title: "innovate()",
-    description: "Always exploring new technologies and best practices.",
+    title: "keepExploring()",
+    description:
+      "Actively learning full-stack development and exploring backend architecture and system design.",
   },
   {
     icon: IconUsers,
     title: "collaborate()",
-    description: "Thriving in team environments and agile methodologies.",
+    description:
+      "Open to collaboration, feedback, and learning in team-based environments.",
   },
 ];
 
@@ -70,19 +72,14 @@ export function About() {
                 <span className="text-[#00AAFF]/50"># Hello, World!</span>
               </p>
               <p>
-                I&apos;m a software engineer with a passion for building elegant
-                solutions to complex problems. My journey started with curiosity
-                about how things work, and it has evolved into a career
-                dedicated to creating impactful software.
-              </p>
-              <p>
-                I specialize in{" "}
-                <span className="text-[#00AAFF]">full-stack development</span>{" "}
-                with a focus on creating responsive, user-friendly applications.
-                Whether it&apos;s architecting backend systems or crafting
-                intuitive user interfaces, I bring dedication and attention to
-                detail to every project. When I&apos;m not coding, you&apos;ll
-                find me exploring new technologies
+                Software engineer and final-year Informatics student. I spent
+                much of my journey mastering{" "}
+                <span className="text-[#00AAFF]">Full-Stack Development</span>,
+                but lately, I&apos;ve been obsessed with what happens
+                &apos;under the hood.&apos; I&apos;m currently focusing on
+                Backend Architecture and Systems to build more resilient and
+                impactful software. When I&apos;m not coding, I&apos;m usually
+                exploring new tech stacks or refining my system design skills.
               </p>
             </div>
           </motion.div>

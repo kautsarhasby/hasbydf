@@ -7,12 +7,14 @@ import { cn } from "@/lib/utils";
 import { profileData, socialLinks } from "@/lib/constants";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { images } from "./constant";
 
 export function Hero() {
   return (
-    <main className=" relative min-h-screen py-4 w-full flex justify-center items-center">
+    <main className=" relative min-h-screen pb-8 pt-24 md:py-4 w-full flex flex-col xl:flex-row justify-center items-center gap-10">
       <div className="flex items-center flex-col text-center relative z-10">
-        <div className="animate-fade-up">
+        <div className="  ">
           <p className="font-mono text-blue-400 mb-4 text-sm md:text-xl tracking-wider">
             Hello, I&apos;m
           </p>
@@ -27,7 +29,7 @@ export function Hero() {
           }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold font-mono mb-6 leading-tight">
+          <h1 className="text-4xl md:text-4xl font-bold font-mono mb-6 leading-tight">
             <span className="text-white ">Kautsar </span>
             <span className="text-[#00AAFF]">Hasby</span>
           </h1>
@@ -54,9 +56,9 @@ export function Hero() {
             ease: "easeOut",
           }}
           viewport={{ once: true, amount: 0.3 }}
-          className="border-[#00AAFF] text-start container  border-2 rounded-xl shadow-[0_0px_64px_rgba(0,0,0,0.25)] p-6  mb-6 shadow-[#00AAFF]/50"
+          className="border-[#00AAFF] text-start max-w-[40rem]  border-2 rounded-xl shadow-[0_0px_64px_rgba(0,0,0,0.25)] p-6  mb-6 shadow-[#00AAFF]/50"
         >
-          <p className="text-muted-foreground leading-relaxed md:text-xl font-jetbrains">
+          <p className="text-muted-foreground leading-relaxed md:text-base font-jetbrains">
             <span className="before:content-['//_']">
               {" "}
               Building the future, one line at a time
@@ -124,6 +126,25 @@ export function Hero() {
             </Link>
           </Button>
         </div>
+      </div>
+      <div className="relative grid grid-rows-2 grid-cols-2">
+        {images.map((image, i) => (
+          <div
+            key={i.toString()}
+            className="relative w-[150px] h-[150px]
+                sm:w-[250px] sm:h-[250px]
+                md:w-[200px] md:h-[200px]
+                xl:w-[250px] xl:h-[250px] overflow-hidden"
+          >
+            <Image
+              src={image}
+              alt="kautsar"
+              fill
+              className="object-cover object-center"
+            />
+          </div>
+        ))}
+        <div className="absolute inset-0  w-full h-full bg-gradient-to-b from-[#06070A] from-5% via-transparent via-50% to-95% to-[#06070A]" />
       </div>
     </main>
   );

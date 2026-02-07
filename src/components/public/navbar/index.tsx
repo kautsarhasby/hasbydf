@@ -1,10 +1,20 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { IconTerminal } from "@tabler/icons-react";
+import { IconMenu, IconTerminal } from "@tabler/icons-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navbarLink } from "./constant";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 export default function Navbar() {
   const [navbarScrolled, setNavbarScrolled] = useState(false);
@@ -36,8 +46,7 @@ export default function Navbar() {
             <h2 className=" md:text-xl font-bold">Hasby</h2>
           </Link>
 
-          {/* Web Navbar */}
-          <div className="flex items justify-center gap-10">
+          <div className="hidden md:flex items justify-center gap-10">
             <div className="gap-10 text-xs font-mono items-center md:text-xl md:flex hidden">
               {navbarLink.map((navi, i) => (
                 <Link
@@ -57,30 +66,51 @@ export default function Navbar() {
               &gt; get_in_touch()
             </Button>
           </div>
+
+          {/* Mobile Navbar */}
+          <div className="flex md:hidden items justify-center gap-10">
+            <Drawer>
+              <DrawerTrigger asChild>
+                <Button variant="outline">
+                  <IconMenu />
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent>
+                <DrawerHeader>
+                  <DrawerTitle className="font-jetbrains flex items-center text-center justify-center">
+                    <IconTerminal className="text-[#00AAFF]" />
+                    <h2 className=" md:text-xl font-bold">Hasby</h2>
+                  </DrawerTitle>
+                </DrawerHeader>
+
+                <div className="gap-4 text-lg font-mono items-start px-4 flex flex-col">
+                  {navbarLink.map((navi, i) => (
+                    <Link
+                      key={i.toString()}
+                      href={navi.url}
+                      className="inline-flex justify-center gap-2 items-center  transition-colors relative group"
+                    >
+                      <navi.icon className="text-[#00AAFF]" />
+                      <span className="text-[#00AAFF]/50 ">./</span>
+                      <span className="hover:text-[#00AAFF] text-muted-foreground">
+                        {navi.title}
+                      </span>
+                      <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#00AAFF] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                    </Link>
+                  ))}
+                </div>
+                <DrawerFooter>
+                  <DrawerClose asChild>
+                    <Button className="outline-[#00AAFF]/10 text-[#00AAFF] font-mono outline-[1px] outline text-lg bg-[#06070A] rounded-md hover:bg-[#00AAFF] hover:text-[#06070A] font-black transition-colors duration-300">
+                      &gt; get_in_touch()
+                    </Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
+          </div>
         </nav>
       </header>
-      {/* MOBILE NAVBAR */}
-      <section
-        className={
-          "w-full transition-all duration-500 fixed z-40 bottom-0 bg-black rounded-t-md border-t-2 block md:hidden"
-        }
-      >
-        <ul className=" grid grid-cols-4  text-white divide-x-2 ">
-          {navbarLink.map((navi, i) => (
-            <li
-              className="px-2 text-sm items-center justify-center py-4  flex "
-              key={i.toString()}
-            >
-              <Link
-                href={navi.url}
-                className="flex  justify-center gap-2 items-center hover:underline"
-              >
-                <span>{navi.title}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import { About } from "@/components/public/about";
 import { Experience } from "@/components/public/experiences";
 import { Hero } from "@/components/public/hero";
+import { CurrentlyLearningStack } from "@/components/public/skills/currently-learning";
 import { SoftSkills } from "@/components/public/skills/soft-skills";
 import { TechStack } from "@/components/public/skills/tech-stack";
 import { IconTerminal } from "@tabler/icons-react";
@@ -28,6 +29,7 @@ export default function Home() {
           <span className="text-muted-foreground">/&gt;</span>
         </h2>
         <TechStack />
+        <CurrentlyLearningStack />
         <SoftSkills />
       </section>
       <Experience />
