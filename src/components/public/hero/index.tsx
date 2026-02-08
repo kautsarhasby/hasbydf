@@ -1,6 +1,10 @@
 "use client";
 import React from "react";
-import { IconChevronDown, IconChevronRight } from "@tabler/icons-react";
+import {
+  IconChevronDown,
+  IconChevronRight,
+  IconFileInfo,
+} from "@tabler/icons-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -12,7 +16,7 @@ import { images } from "./constant";
 
 export function Hero() {
   return (
-    <main className=" relative min-h-screen pb-8 pt-24 md:py-4 w-full flex flex-col xl:flex-row justify-center items-center gap-10">
+    <main className=" relative min-h-screen pb-8 pt-24 md:py-24 w-full flex flex-col xl:flex-row justify-center items-center gap-10">
       <div className="flex items-center flex-col text-center relative z-10">
         <div className="  ">
           <p className="font-mono text-blue-400 mb-4 text-sm md:text-xl tracking-wider">
@@ -109,7 +113,7 @@ export function Hero() {
           ))}
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex flex-col-reverse md:flex gap-4 justify-center">
           <Button variant={"ghost"} asChild>
             <Link
               href="#about"
@@ -123,6 +127,22 @@ export function Hero() {
               <span>&gt;</span>
               explore.my_portfolio()
               <IconChevronDown className="w-4 h-4" />
+            </Link>
+          </Button>
+          <Button variant={"ghost"} asChild>
+            <Link
+              href="https://drive.google.com/file/d/1hkducgMLUzXeMD02rQ3Sy7QzQUGQPdiv/view?usp=sharing"
+              target="_blank"
+              className={cn(
+                "bg-[#00AAFF] border-[#00AAFF]/10 border-2 text-[#06070A]",
+                "flex items-center gap-2 px-8 py-8 font-bold font-jetbrains  rounded-xl text-lg",
+                "transition-all duration-300",
+                "hover:border-[#00AAFF]/50 hover:bg-[#00AAFF] hover:text-[#06070A] hover:shadow-[#00AAFF] hover:shadow-[0_0_40px_hsl(175_80%_50%_/_0.15)]",
+              )}
+            >
+              <span>&gt;</span>
+              <IconFileInfo />
+              download_my_cv()
             </Link>
           </Button>
         </div>
@@ -140,6 +160,7 @@ export function Hero() {
               src={image}
               alt="kautsar"
               fill
+              priority={i === 0}
               className="object-cover object-center"
             />
           </div>

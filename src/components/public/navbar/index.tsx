@@ -9,7 +9,6 @@ import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -47,7 +46,7 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items justify-center gap-10">
-            <div className="gap-10 text-xs font-mono items-center md:text-xl md:flex hidden">
+            <div className="gap-10 text-xs font-mono items-center md:text-xl xl:flex hidden">
               {navbarLink.map((navi, i) => (
                 <Link
                   key={i.toString()}
@@ -61,14 +60,14 @@ export default function Navbar() {
                   <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#00AAFF] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
                 </Link>
               ))}
+              <Button className="outline-[#00AAFF]/10 text-[#00AAFF] font-mono outline-[1px] outline text-lg bg-[#06070A] rounded-md hover:bg-[#00AAFF] hover:text-[#06070A] font-black transition-colors duration-300">
+                &gt; get_in_touch()
+              </Button>
             </div>
-            <Button className="outline-[#00AAFF]/10 text-[#00AAFF] font-mono outline-[1px] outline text-lg bg-[#06070A] rounded-md hover:bg-[#00AAFF] hover:text-[#06070A] font-black transition-colors duration-300">
-              &gt; get_in_touch()
-            </Button>
           </div>
 
           {/* Mobile Navbar */}
-          <div className="flex md:hidden items justify-center gap-10">
+          <div className="flex xl:hidden items justify-center gap-10">
             <Drawer>
               <DrawerTrigger asChild>
                 <Button variant="outline">
@@ -79,7 +78,7 @@ export default function Navbar() {
                 <DrawerHeader>
                   <DrawerTitle className="font-jetbrains flex items-center text-center justify-center">
                     <IconTerminal className="text-[#00AAFF]" />
-                    <h2 className=" md:text-xl font-bold">Hasby</h2>
+                    <p className=" md:text-xl font-bold">Hasby</p>
                   </DrawerTitle>
                 </DrawerHeader>
 
