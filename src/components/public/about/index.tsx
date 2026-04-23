@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import {
@@ -34,7 +33,7 @@ const highlights = [
 export function About() {
   return (
     <section
-      className="items-center flex flex-col justify-center py-4"
+      className="items-center flex flex-col justify-center py-4 scroll-mt-24"
       id="about"
     >
       <div className="grid lg:grid-cols-2 gap-16 items-center container mb-10">

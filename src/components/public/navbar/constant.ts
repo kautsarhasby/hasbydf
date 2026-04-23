@@ -1,38 +1,32 @@
 import {
-  IconBriefcase,
   IconInfoSquareRounded,
   IconMail,
-  IconMoodCog,
   IconNews,
+  IconTools,
 } from "@tabler/icons-react";
 
 export const navbarLink = [
   {
     number: 1,
     title: "about",
-    url: "#about",
+    url: "/#about",
     icon: IconInfoSquareRounded,
   },
+
   {
     number: 2,
-    title: "skills",
-    url: "#skills",
-    icon: IconMoodCog,
+    title: "projects",
+    url: "/projects",
+    icon: IconTools,
   },
   {
     number: 3,
-    title: "experience",
-    url: "#experience",
-    icon: IconBriefcase,
-  },
-  {
-    number: 4,
     title: "contact",
-    url: "#contact",
+    url: "/contact",
     icon: IconMail,
   },
   {
-    number: 5,
+    number: 4,
     title: "articles",
     url: "/articles",
     icon: IconNews,

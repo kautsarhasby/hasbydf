@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Hasby",
     short_name: "Hasby",
     description:
-      "Self Taught Informatics Student and Fullstack Dev Enthusiast, Hasby is my nickname and my fullname is Kautsar Hasby Dastien Fredil",
+      "Self Taught Informatics Student and Fullstack Dev Enthusiast, Hasby is my nickname and my fullname is Kautsar Hasby Dastien Fredila",
     start_url: "/",
     scope: "/",
     display: "standalone",

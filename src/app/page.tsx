@@ -1,6 +1,7 @@
 import { About } from "@/components/public/about";
 import { Experience } from "@/components/public/experiences";
 import { Hero } from "@/components/public/hero";
+import { ProjectViewer } from "@/components/public/projects/viewer";
 import { CurrentlyLearningStack } from "@/components/public/skills/currently-learning";
 import { SoftSkills } from "@/components/public/skills/soft-skills";
 import { TechStack } from "@/components/public/skills/tech-stack";
@@ -33,6 +34,7 @@ export default function Home() {
         <SoftSkills />
       </section>
       <Experience />
+      <ProjectViewer />
     </main>
   );
 }

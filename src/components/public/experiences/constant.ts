@@ -31,6 +31,23 @@ export type Experience = MultiRoleExperience | SingleRoleExperience;
 
 export const experiences: Experience[] = [
   {
+    type: "single",
+    company: "PT. Pejuang Indonesia Cerdas",
+    logo: "/images/experiences/posn.jpg",
+    startDate: "Dec 2025",
+    endDate: "Apr 2026",
+    title: "Frontend Developer",
+    description:
+      "Developed responsive web interfaces using Next.js and collaborated with backend engineers to integrate REST APIs, manage data fetching, handle API responses, and ensure smooth data flow and consistency across the application.",
+    technologies: ["Next.js", "React", "Redux", "TypeScript", "Tailwind CSS"],
+    softSkills: [
+      "Team Work",
+      "Problem Solving",
+      "Communication",
+      "Attention to Detail",
+    ],
+  },
+  {
     type: "multi",
     company: "Lembaga Pengembangan Komputerisasi Gunadarma",
     logo: "/images/experiences/lepkom.png",
