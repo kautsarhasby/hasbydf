@@ -131,7 +131,7 @@ export function Hero() {
           </Button>
           <Button variant={"ghost"} asChild>
             <Link
-              href="https://drive.google.com/file/d/1hkducgMLUzXeMD02rQ3Sy7QzQUGQPdiv/view?usp=sharing"
+              href={process.env.NEXT_PUBLIC_RESUME_LINK || "#"}
               target="_blank"
               className={cn(
                 "bg-[#00AAFF] border-[#00AAFF]/10 border-2 text-[#06070A]",
